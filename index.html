@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>La Placita Del Prado Oriental</title>
+<meta name="description" content="Restaurante La Placita Del Prado Oriental — Santo Domingo Este. Pedidos por WhatsApp."/>
+<meta name="theme-color" content="#7B1C2E"/>
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="La Placita"/>
+<link rel="apple-touch-icon" href="logo.jpeg"/>
+<meta name="format-detection" content="telephone=no"/>
+<!-- Android Chrome -->
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="application-name" content="La Placita"/>
+<!-- Open Graph -->
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="La Placita Del Prado Oriental"/>
+<meta property="og:description" content="Restaurante en Santo Domingo Este — Pedidos fáciles por WhatsApp"/>
+<meta property="og:image" content="logo.jpeg"/>
+<!-- Fuentes -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-top">
+    <img class="logo" src="logo.jpeg" alt="La Placita Del Prado Oriental"/>
+    <div class="hdr-info">
+      <div class="hdr-name">La Placita Del Prado Oriental</div>
+      <div class="hdr-sub">M.G. · Santo Domingo Este · (809) 236-6821</div>
+    </div>
+    <span class="hdr-badge">● Abierto</span>
+    <button class="cart-btn" onclick="openCart()" aria-label="Ver carrito">
+      🛒 <span id="hdr-count">0</span>
+      <div class="cart-badge" id="hdr-badge">RD$0</div>
+    </button>
+  </div>
+  <div class="tabs-wrap"><div class="tabs" id="tabs"></div></div>
+</header>
+
+<main class="main" id="main"></main>
+
+<div class="cart-bar" id="cart-bar">
+  <div class="bar-info">
+    <span class="bar-count" id="bar-count">0 artículos</span>
+    <span class="bar-total" id="bar-total">RD$ 0</span>
+  </div>
+  <button class="bar-btn" onclick="openCart()">Ver carrito →</button>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<div class="overlay" id="pd-ov" onclick="closePD(event)" role="dialog" aria-modal="true">
+  <div class="sheet" id="pd-sheet" onclick="event.stopPropagation()">
+    <div class="s-handle"></div>
+    <button class="s-close" onclick="closePDModal()" aria-label="Cerrar">✕</button>
+    <div id="pd-body"></div>
+    <div class="pd-foot" id="pd-foot"></div>
+  </div>
+</div>
+
+<!-- CART / CHECKOUT -->
+<div class="overlay" id="cart-ov" onclick="closeCartOv(event)" role="dialog" aria-modal="true">
+  <div class="sheet" onclick="event.stopPropagation()">
+    <div class="s-handle"></div>
+    <button class="s-close" onclick="closeCartModal()" aria-label="Cerrar">✕</button>
+    <div class="s-inner" id="cart-content"></div>
+  </div>
+</div>
+
+<script src="script.js" charset="utf-8"></script>
+</body>
+</html>
